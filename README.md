@@ -22,9 +22,9 @@ Some explanation:
 
 ## Notes
 
-You can password protect this tunnel easily with `auth='username:password'`.  You can make this https only with `--bind-tls=true`.  See the ngrok docs for more options.
+You can password protect this tunnel easily with `--auth='username:password'`.  You can make this https only with `--bind-tls=true`.  See the ngrok docs for more options.
 
-**NOTE** Using TLS tunnels for secure services (e.g. kubernetes api) you need a [pro or business plan](https://ngrok.com/product#pricing)
+Using TLS tunnels (the ngrok `tls` command) for secure services (e.g. kubernetes api) you need a [pro or business plan](https://ngrok.com/product#pricing).  You may be able to make it work with the `tcp` command.
 
 There is nothing Kubernetes specific (yet) in the container here.  This is really a super simple container with just ngrok in it.  I created a separate version just for this README.
 
