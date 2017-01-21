@@ -10,7 +10,7 @@ This is strictly intended for debug/dev type scenarios.
 kubectl run --restart=Never \
   -t -i --rm \
   ngrok --image=gcr.io/kuar-demo/ngrok \
-  -- ./ngrok http my-service:8080
+  -- http my-service:8080
 ```
 
 Some explanation:
@@ -23,6 +23,8 @@ Some explanation:
 ## Notes
 
 You can password protect this tunnel easily with `auth='username:password'`.  You can make this https only with `--bind-tls=true`.  See the ngrok docs for more options.
+
+**NOTE** Using TLS tunnels for secure services (e.g. kubernetes api) you need a [pro or business plan](https://ngrok.com/product#pricing)
 
 There is nothing Kubernetes specific (yet) in the container here.  This is really a super simple container with just ngrok in it.  I created a separate version just for this README.
 
